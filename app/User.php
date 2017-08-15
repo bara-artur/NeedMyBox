@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'email_token',
+        'name', 'email', 'password', 'email_token', 'role',
     ];
 
     /**
@@ -26,4 +26,23 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+	/**
+	 * Get the user's role string.
+	 *
+	 * @param  int  $value
+	 * @return string
+	 */
+    public function getRoleAttribute($value)
+    {
+    	if($value===1)
+	    {
+		    $value='admin';
+	    }
+	    elseif ($value==2)
+	    {
+	    	$value='user';
+	    }
+	    return $value;
+    }
 }
