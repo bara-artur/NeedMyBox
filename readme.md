@@ -1,1 +1,1 @@
-Laravel project
+1. env-dist rename to .env  2. composer update . 3 php artisan migrate
