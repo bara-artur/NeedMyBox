@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'email_token', 'role',
+        'name', 'email', 'password', 'email_token', 'role', 'verified'
     ];
 
     /**
@@ -45,4 +45,26 @@ class User extends Authenticatable
 	    }
 	    return $value;
     }
+	/**
+	 * Set the user's first name.
+	 *
+	 * @param  string $value
+	 * @return void
+	 */
+	public function setRoleAttribute($value)
+	{
+		if($value=='admin')
+		{
+			$this->attributes['role'] = 1;
+		}
+		elseif ($value=='user')
+		{
+			$this->attributes['role'] = 2;
+		}
+	}
+	
+	public function accounts()
+	{
+		return $this->hasMany('App\Account');
+	}
 }
