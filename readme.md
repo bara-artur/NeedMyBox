@@ -1,6 +1,7 @@
 # NeedMyBox (formerly "What in Parcel?")
 
 **Lead Developer:** Barachenia Artur
+
 **Project Type:** Inventory Management System / Logistics SaaS  
 **Partner:** Parcel Services (Champlain, NY, USA)  
 **Live Site:** [needmybox.com](https://needmybox.com)
